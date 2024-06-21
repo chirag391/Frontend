@@ -9,7 +9,7 @@ const AddNews = () => {
 
   const submitNews = ()=> {
     const token = localStorage.getItem('authToken');
-    axios.post("http://localhost:8000/newsentry",newsData, {
+    axios.post("https://doctors-backend-e5w1.onrender.com/newsentry",newsData, {
       headers: {
         'Authorization': `${token}`
       }

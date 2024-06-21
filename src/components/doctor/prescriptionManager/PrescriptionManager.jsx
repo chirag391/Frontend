@@ -18,7 +18,7 @@ const PrescriptionManager = () => {
   const submitPrescriptions = async () => {
     const token = localStorage.getItem('authToken');
     try {
-      await axios.post("http://localhost:8000/addDetailsToPatient", { bookingId:id, prescription:prescriptions }, { headers: { 'Authorization': `${token}` } });
+      await axios.post("https://doctors-backend-e5w1.onrender.com/addDetailsToPatient", { bookingId:id, prescription:prescriptions }, { headers: { 'Authorization': `${token}` } });
       alert('Prescriptions submitted successfully');
       navigate('/doctor/bookingnotifications');
     } catch (error) {

@@ -9,7 +9,7 @@ const AdminDetails = () => {
     const getUserData = async (e) => {
         try {
             const token = localStorage.getItem('authToken');
-            const details = await axios.get(`http://localhost:8000/getuserdetails`,{headers: {'Authorization': `${token}`}});
+            const details = await axios.get(`https://doctors-backend-e5w1.onrender.com/getuserdetails`,{headers: {'Authorization': `${token}`}});
             //console.log(details.data.userData);
             console.log(details);
             setAdminDetails(details.data.userData);
@@ -23,7 +23,7 @@ const AdminDetails = () => {
     }, [])
     return (
         <div className='admindetails'>
-            <div className='adminimage'><img className='adminprofileimage' src={`http://localhost:8000/` + adminDetails.profile_image} alt='admin'></img></div>
+            <div className='adminimage'><img className='adminprofileimage' src={`https://doctors-backend-e5w1.onrender.com/` + adminDetails.profile_image} alt='admin'></img></div>
             <div className='admindata'>
                 <div className='admindataleft'>
                     <div className='adminlabel'><p className='adminlabelp'><strong>Name: </strong>{adminDetails.name}</p> </div>

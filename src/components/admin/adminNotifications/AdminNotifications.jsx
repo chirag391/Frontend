@@ -9,7 +9,7 @@ const AdminNotifications = () => {
     const getRequests = async () => {
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.get(`http://localhost:8000/getApprovalRequestList`, {
+            const response = await axios.get(`https://doctors-backend-e5w1.onrender.com/getApprovalRequestList`, {
                 headers: {
                     'Authorization': `${token}`
                 }

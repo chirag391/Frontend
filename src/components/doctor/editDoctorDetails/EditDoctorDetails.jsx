@@ -15,7 +15,7 @@ const EditDoctorDetails = () => {
     const getUserData = async (e) => {
         try {
             const token = localStorage.getItem("authToken")
-            const details = await axios.get(`http://localhost:8000/getuserdetails`, {
+            const details = await axios.get(`https://doctors-backend-e5w1.onrender.com/getuserdetails`, {
                 headers: {
                     'Authorization': `${token}`
                 }
@@ -45,7 +45,7 @@ const EditDoctorDetails = () => {
                 profileData.append(key, doctorDetails[key]);
             }
             const token = localStorage.getItem('authToken');
-            const response = await axios.patch(`http://localhost:8000/updateuserdetails`, profileData, {
+            const response = await axios.patch(`https://doctors-backend-e5w1.onrender.com/updateuserdetails`, profileData, {
                 headers: {
                     'Authorization': `${token}`
                 }
@@ -59,7 +59,7 @@ const EditDoctorDetails = () => {
 
     return (
         <div className='editdoctordetails'>
-            <div className='editdoctorimage'><img className='editdoctorprofileimage' src={`http://localhost:8000/`+doctorDetails.profile_image} alt='doctor'></img></div>
+            <div className='editdoctorimage'><img className='editdoctorprofileimage' src={`https://doctors-backend-e5w1.onrender.com/`+doctorDetails.profile_image} alt='doctor'></img></div>
             <input className='doctorlabelinputprofile' type="file" accept=".jpg, .jpeg, .png" onChange={onChangeImage} />
             <div className='editdoctordata'>
                 <div className='editdoctordataleft'>

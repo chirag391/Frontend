@@ -10,7 +10,7 @@ const ViewNotificationDetail = () => {
     const getUserData = async (e) => {
         try {
             const token = localStorage.getItem('authToken');
-            const details = await axios.get(`http://localhost:8000/getdoctordetails`, {params: {id: id}, headers: { 'Authorization': `${token}`}});
+            const details = await axios.get(`https://doctors-backend-e5w1.onrender.com/getdoctordetails`, {params: {id: id}, headers: { 'Authorization': `${token}`}});
             //console.log(details);
             setNotificationDetails(details.data);
         } catch (error) {
@@ -26,7 +26,7 @@ const ViewNotificationDetail = () => {
         notificationDetails.id = id;
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.patch(`http://localhost:8000/approveDoctor`, notificationDetails, { headers: { 'Authorization': `${token}`}});
+            const response = await axios.patch(`https://doctors-backend-e5w1.onrender.com/approveDoctor`, notificationDetails, { headers: { 'Authorization': `${token}`}});
             alert("approved");
             navigate('/admin/adminnotifications');
         } catch (error) {
@@ -39,7 +39,7 @@ const ViewNotificationDetail = () => {
         notificationDetails.id = id;
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.patch(`http://localhost:8000/approveDoctor`, notificationDetails, { headers: { 'Authorization': `${token}`}});
+            const response = await axios.patch(`https://doctors-backend-e5w1.onrender.com/approveDoctor`, notificationDetails, { headers: { 'Authorization': `${token}`}});
             alert("rejected");
             navigate('/admin/adminnotifications');
         } catch (error) {
@@ -49,7 +49,7 @@ const ViewNotificationDetail = () => {
 
     return (
         <div className='notificationdetails'>
-            <div className='notificationimage'><img className='notificationprofileimage' src={`http://localhost:8000/` + notificationDetails.profile_image} alt='notification'></img></div>
+            <div className='notificationimage'><img className='notificationprofileimage' src={`https://doctors-backend-e5w1.onrender.com/` + notificationDetails.profile_image} alt='notification'></img></div>
             <div className='notificationdata'>
                 <div className='notificationdataleft'>
                     <div className='notificationlabel'><p className='notificationlabelp'><strong>Name: </strong>{notificationDetails.name}</p> </div>

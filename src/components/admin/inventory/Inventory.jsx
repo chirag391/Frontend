@@ -10,7 +10,7 @@ const Inventory = () => {
   const getInventoryData = async () => {
     try {
       const token = localStorage.getItem("authToken");
-      const response = await axios.get(`http://localhost:8000/getinventorydata`, {
+      const response = await axios.get(`https://doctors-backend-e5w1.onrender.com/getinventorydata`, {
         headers: {
           'Authorization': `${token}`
         }
@@ -43,7 +43,7 @@ const Inventory = () => {
     setInventory(updatedInventory);
 
     const token = localStorage.getItem('authToken');
-    await axios.patch(`http://localhost:8000/updateinventory`, updatedInventory[index], {
+    await axios.patch(`https://doctors-backend-e5w1.onrender.com/updateinventory`, updatedInventory[index], {
       headers: {
         'Authorization': `${token}`
       }
@@ -69,7 +69,7 @@ const Inventory = () => {
     setInventory(updatedInventory);
 
     const token = localStorage.getItem('authToken');
-    await axios.patch(`http://localhost:8000/updateinventory`, updatedInventory[index], {
+    await axios.patch(`https://doctors-backend-e5w1.onrender.com/updateinventory`, updatedInventory[index], {
       headers: {
         'Authorization': `${token}`
       }
@@ -95,7 +95,7 @@ const Inventory = () => {
       setInventory(jsonData);
 
       const token = localStorage.getItem('authToken');
-      await axios.post(`http://localhost:8000/bulkinventory`, {data:jsonData}, {
+      await axios.post(`https://doctors-backend-e5w1.onrender.com/bulkinventory`, {data:jsonData}, {
         headers: {
           'Authorization': `${token}`
         }
